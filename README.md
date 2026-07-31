@@ -188,11 +188,17 @@ Le sezioni GPU richiedono una versione di John the Ripper con supporto OpenCL, d
 
 ## Riproducibilità e limiti
 
-Il progetto è stato costruito per rendere esplicite tutte le condizioni sperimentali. La password, gli hash, la wordlist e i file di laboratorio sono generati e utilizzati localmente. Le misurazioni vengono registrate insieme alla configurazione della sessione, mentre grafici e tabelle derivano direttamente dai risultati raccolti dal notebook.
+Riproducibilità e limiti
 
-La prova non rappresenta un attacco contro sistemi reali e non utilizza credenziali appartenenti a terzi. I risultati non devono essere generalizzati senza considerare hardware, software, dimensione della wordlist e parametri degli algoritmi.
+Il progetto è stato costruito per rendere esplicite le condizioni sperimentali. La password, gli hash, la wordlist e gli altri file di laboratorio sono generati e utilizzati localmente. Le misurazioni vengono registrate insieme alla configurazione della sessione, mentre tabelle e grafici derivano direttamente dai risultati raccolti dal notebook.
 
-L’analisi non dimostra che una password lunga e casuale possa essere trovata mediante ricerca esaustiva in tempi realistici. Dimostra invece che, quando una candidata è già presente nella wordlist, la funzione impiegata per proteggere la password determina il costo di ogni verifica e quindi la sostenibilità complessiva dell’attacco offline.
+L’esperimento principale su CPU può essere riprodotto anche su sistemi dotati di una GPU diversa o privi di accelerazione OpenCL. Le prove supplementari su GPU richiedono invece un dispositivo compatibile con OpenCL, correttamente riconosciuto da John the Ripper Jumbo. L’indice del dispositivo deve essere adattato alla configurazione del sistema utilizzato oppure selezionato automaticamente dal notebook.
+
+La procedura sperimentale rimane riproducibile su hardware differente, ma non è possibile attendersi gli stessi tempi e valori di throughput. Le prestazioni dipendono infatti dal processore, dal modello di GPU, dai driver, dal backend OpenCL, dalla versione del software e dalle condizioni della singola esecuzione.
+
+La prova non rappresenta un attacco contro sistemi reali e non utilizza credenziali appartenenti a terzi. I risultati non devono essere generalizzati senza considerare l’hardware, il software, la dimensione della wordlist e i parametri degli algoritmi.
+
+L’analisi non dimostra che una password lunga e casuale possa essere individuata mediante ricerca esaustiva in tempi realistici. Dimostra invece che, quando la password candidata è già presente nella wordlist, la funzione impiegata per proteggerla determina il costo di ogni verifica e, di conseguenza, la sostenibilità complessiva dell’attacco offline.
 
 ## Considerazioni conclusive
 
