@@ -1,3 +1,11 @@
+<p align="center">
+  <img
+    src="./assets/banner-password-offline-lab.png"
+    alt="Banner"
+    width="100%"
+  />
+</p>
+
 # Analisi sperimentale della sicurezza delle password in uno scenario di attacco offline
 
 ## Presentazione del progetto
